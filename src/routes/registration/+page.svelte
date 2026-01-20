@@ -56,8 +56,8 @@
                         <img  alt="logo"  src={logo}/>
                     </div>
                     <div class="flex justify-center items-center flex-col">
-                        <h1 class="text-3xl font-bold text-[#1F2937]">Вход в систему</h1>
-                        <p class="text-base font-regular text-[#4B5563]">Введите ваши учетные данные</p>
+                        <h1 class="text-3xl font-bold text-[#1F2937]">Регистрация в системе</h1>
+                        <p class="text-base font-regular text-[#4B5563]">Придумайте учетные данные</p>
                     </div>
                 </div>
                 <div class="flex flex-col  gap-8">
@@ -72,10 +72,12 @@
                     {#if error || passwordError}
                     <div class="text-red-500 text-sm mt-1">{error || passwordError}</div>
                     {/if}
-                    <Button onclick={handleSubmit} disabled={!!error || !login || !! passwordError || !password} class="bg-linear-to-r from-[#2563EB] to-[#9333EA] hover:scale-105  h-[48px] w-[366px] rounded-xl" >Войти в систему</Button>
+                    <Button onclick={handleSubmit} disabled={!!error || !login || !! passwordError || !password} class="bg-linear-to-r from-[#2563EB] to-[#9333EA] hover:scale-105  h-[48px] w-[366px] rounded-xl" >
+                        <a href="/" >Зарегистрироваться</a>
+                    </Button>
                     <div class="flex justify-center gap-1">
-                        <p class="text-sm font-regular text-[#374151]">Нет аккаунта?</p>
-                        <a href="/registration" class="text-sm font-medium text-[#2563EB]">Зарегистрироваться</a>
+                        <p class="text-sm font-regular text-[#374151]">Есть аккаунт?</p>
+                        <a href="/auth" class="text-sm font-medium text-[#2563EB]">Войти</a>
                     </div>
                 </div>
 
