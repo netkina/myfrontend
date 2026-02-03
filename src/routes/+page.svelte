@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
 
-	
+		import './layout.css';
+	import logo from '$lib/assets/logo.png';
+	 import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import AppSidebar from "$lib/components/app-sidebar.svelte";
 
 	resolve('/auth')
 </script>
@@ -13,7 +16,10 @@
 
 <section>
 	
+<Sidebar.Provider>
+  <AppSidebar />
 
+</Sidebar.Provider>
 </section>
 
 <style>

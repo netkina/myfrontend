@@ -7,14 +7,15 @@
   import * as Sidebar from "$lib/components/ui/sidebar/index.js";
   	import logo from '$lib/assets/logo.png';
 	  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import { ChevronUp, AArrowUp, FileText, User, Bell, Settings} from "lucide-svelte";
+	import { ChevronUp, AArrowUp, FileText, User, Bell, Settings, LogOut} from "lucide-svelte";
+	import { redirect } from "@sveltejs/kit";
 
  
   // Menu items.
   const items = [
     {
       title: "Анкеты",
-      url: "#",
+      url: "/forms",
       icon: FileText,
     },
     {
@@ -33,13 +34,17 @@
       icon: Settings,
     },
   ];
+
+  function logOutFunc(){
+      window.location.href = '/auth'; // или '/auth', '/signin'
+  }
 </script>
-<Sidebar.Root>
+<Sidebar.Root  >
   <Sidebar.Content>
 
 		<div class="flex p-[24px] items-center gap-4">
             <img class="w-[40px]" alt="logo"  src={logo}/>
-			 <p class="text-xl font-bold text-[#374151]">Анкетирование</p>
+			 <p class="text-xl font-bold text-[#1F2937]">Анкетирование</p>
              
         </div>
     <Sidebar.Group>
@@ -67,7 +72,7 @@
               {#snippet child({ props })}
                 <Sidebar.MenuButton
                   {...props}
-                  class="data-[state=open]:bg-sidebar-accent data-[state=open]:font-medium text-[#1F2937] text-lg"
+                  class="data-[state=open]:bg-sidebar-accent data-[state=open]:font-medium text-[#1F2937] text-base"
                 >
                   Пользователь
                   <ChevronUp class="ms-auto" />
@@ -78,17 +83,12 @@
               side="top"
               class="w-(--bits-dropdown-menu-anchor-width)"
             >
-              <DropdownMenu.Item>
-                <span>Account</span>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item>
-                <span>Billing</span>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item>
-                <span>Sign out</span>
+              <DropdownMenu.Item onclick={logOutFunc} >
+                <span class="flex items-center gap-2">
+                  Выйти <LogOut />
+                </span>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
           </DropdownMenu.Root>
     </Sidebar.Footer>
 </Sidebar.Root>
-

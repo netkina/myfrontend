@@ -2,7 +2,8 @@
     import logo from '$lib/assets/logo.png';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
-
+    import { goto } from '$app/navigation';
+     
     let login = '';
     let error = '';
     let password = '';
@@ -39,6 +40,7 @@
         if (!error && login && password) {
         console.log("Логин:", login, "Пароль:", password);
         }
+         goto('/forms'); 
     }
 </script>
 

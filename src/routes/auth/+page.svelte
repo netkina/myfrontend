@@ -2,6 +2,8 @@
     import logo from '$lib/assets/logo.png';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
+    import { goto } from '$app/navigation'; 
+    import { User } from 'lucide-svelte';
 
     let login = '';
     let error = '';
@@ -39,6 +41,7 @@
         if (!error && login && password) {
         console.log("Логин:", login, "Пароль:", password);
         }
+        goto('/forms'); 
     }
 </script>
 
@@ -63,7 +66,7 @@
                 <div class="flex flex-col  gap-8">
                     <div class="flex flex-col gap-2">
                         <p class="text-sm font-medium text-[#374151]">Логин или Email</p>
-                        <Input  bind:value={login} class="text-base font-regular text-[##ADAEBC] h-[50px] bg-[#F9FAFB] border-[#D1D5DB] {error ? 'border-red-500' : ''}" placeholder="Введите логин или email"/>
+                        <Input bind:value={login} class="text-base font-regular text-[##ADAEBC] h-[50px] bg-[#F9FAFB] border-[#D1D5DB] {error ? 'border-red-500' : ''}" placeholder="Введите логин или email"/>
                     </div>
                     <div class="flex flex-col gap-2">
                         <p class="text-sm font-medium text-[#374151]">Пароль</p>
