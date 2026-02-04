@@ -39,33 +39,23 @@
   }[status];
 
 </script>
-<cardForm  class="flex flex-col w-full gap-[15px] p-[16px] bg-white border-1 rounded-xl border-[#E0E7FF] rounded-full text-sm font-medium border">
-    <div class="flex flex-row justify-between items-center w-full">
-        <div class="{colorClass} rounded-xl px-2 py-1 h-min">
-            {text}
-        </div>
-        <div class="text-right">
-            <p class="text-[#6B7280] text-xs font-normal">Дата окончания</p>
-            <div class="{colorClassDate}">
-                Дата
-            </div>
-        </div>
-    </div>
+<cardFormChange  class="flex flex-col w-full gap-[15px] p-[16px] bg-white border-1 rounded-xl border-[#E0E7FF] rounded-full text-sm font-medium border">
     <div>
         <h1 class="text-lg font-semibold text-[#1F2937]">Название анкеты</h1>
         <p class="text-sm font-normal text-[#4B5563]">Описание анкеты</p>
     </div>
         <div class="flex justify-between">
             <div class="flex flex-row items-center gap-2">
-                <Clock class="w-[14px] text-muted-foreground" />
-                <p class="text-sm font-normal text-[#6B7280]">Время прохождения</p>
+                <p class="text-sm font-normal text-[#6B7280]">n секции</p>
             </div>
-            <div class="flex flex-row items-center gap-2">
-                <CircleQuestionMark class="w-[14px] text-muted-foreground"/>
-                <p class="text-sm font-normal text-[#6B7280]">n вопросов</p>
+            <div class="flex flex-row items-center gap-2"> 
+                <p class="text-sm font-normal text-[#6B7280]">n полей</p>
             </div>
         </div>
-        <Progress status="notDone"></Progress>
+        <div class="flex justify-between">
+            <p class="text-[#6B7280] text-xs font-normal">Дата создания</p>
+            <span class="text-[#4F46E5] font-medium">Дата </span>
+        </div>
         <Button.Root
   class="{colorButton} rounded-input text-background shadow-mini inline-flex
 	h-12 items-center justify-center px-[21px] text-[15px]
@@ -74,5 +64,5 @@
   {textButton}
 </Button.Root>
     
-</cardForm>
+</cardFormChange>
 

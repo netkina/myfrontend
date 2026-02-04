@@ -24,8 +24,8 @@
       icon: User,
     },
     {
-      title: "Уведомления",
-      url: "#",
+      title: "Шаблоны",
+      url: "/template",
       icon: Bell,
     },
     {
@@ -49,10 +49,10 @@
         </div>
     <Sidebar.Group>
       <Sidebar.GroupContent>
-        <Sidebar.Menu>
+        <Sidebar.Menu class="flex gap-2">
           {#each items as item (item.title)}
             <Sidebar.MenuItem>
-              <Sidebar.MenuButton class="text-base font-normal text-[#4B5563]">
+              <Sidebar.MenuButton class="text-base font-regular font-poppins text-[#4B5563]">
                 {#snippet child({ props })}
                   <a href={item.url} {...props}>
                     <item.icon />
